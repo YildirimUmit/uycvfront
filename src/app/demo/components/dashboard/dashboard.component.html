@@ -1,0 +1,258 @@
+<div  class="flex flex-row-reverse flex-wrap ">
+    <div pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeoutright" class="flex  justify-content-center align-items-center  border-round animation-duration-1000 animation-ease-in-out">
+
+
+    <p-chip styleClass="  "  (click)="downloadPdf() ">
+    <span class="bg-primary border-circle w-2rem h-2rem flex align-items-center justify-content-center">
+    <span class="pi pi-download"></span>
+    </span>
+        <span class="ml-2 font-medium">
+        CV
+    </span>
+    </p-chip>
+    </div>
+</div>
+<div class="grid">
+
+    <div class="  sm:col-6 md:col-6 lg:col-12 xl:col-12 flex justify-content-center align-items-center "  >
+
+        <div class="grid">
+        <div class="sm:col-6 md:col-6 lg:col-6 xl:col-6  card mb-0 border-none">
+            <div pAnimateOnScroll enterClass="fadeinleft" leaveClass="fadeoutleft" class="flex box   justify-content-center align-items-center  animation-duration-1000 animation-ease-in-out">
+
+
+                <p-image
+                    src="assets/demo/images/profil/my-foto.jpg"
+                    alt="Image"
+                    width="370"
+                    height="300" class="personimage" />
+
+            </div>
+        </div>
+        <div class=" sm:col-6 md:col-6 lg:col-6 xl:col-6  card mb-0 border-none">
+            <div pAnimateOnScroll enterClass="fadeinright" leaveClass="fadeinright" class="flex box   justify-content-center align-items-center   animation-duration-1000 animation-ease-in-out  personinfo">
+
+                    <p class="text-left ml-6">
+                        <br>
+                        <span   class="block text-5xl   mb-3">Ümit YILDIRIM</span>
+                        <span class="block  text-2xl text-sm font-medium mb-3">Software Developer</span>
+                        <br>
+                        <span class="block text-xl   font-medium mb-3">Email:</span>
+                        <span class="block text-base text-sm  font-medium mb-3">umityild&#64;gmail.com</span>
+                        <br>
+                        <span class="block text-xl font-medium   mb-3">Address:</span>
+                        <span class="block text-base text-sm   font-medium mb-3">Ankara</span>
+                    </p>
+
+                </div>
+
+        </div>
+        </div>
+    </div>
+    <div class="col-12 lg:col-12 xl:col-12  mb-1 ">
+
+        <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout" class=" box shadow-4   border-round animation-duration-1000">
+            <div class="card mb-0">
+                <div class="flex justify-content-center algin-item-center h-1rem  ">
+                    <div class="socialmedia">
+                        <i class="pi pi-fw  pi-linkedin" style="font-size: 2rem"></i>
+                        <i class="pi pi-github" style="font-size: 2rem"></i>
+                        <i class="pi pi-twitter" style="font-size: 2rem"></i>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="col-12 lg:col-12 xl:col-12  mb-1 ">
+
+        <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout" class=" box shadow-4   border-round animation-duration-1000">
+
+
+            <div class="flex flex-wrap align-items-center justify-content-center">
+
+                <div class=" border-round  w-100rem min-h-full   p-5 py-0 m-3">
+                    <p class="text-center text-4xl">
+
+                        <a>Hello! I'm Ümit</a>
+                    </p>
+                    <p class="text-center ">
+                        I have been working as a software developer at Mergentech (EFE EROĞLU) software company since 2016. During this time, I have enhanced my technical knowledge and skills through various projects, gaining a deep understanding of the industry's dynamics.
+
+                        My technical expertise includes JAVA, ORACLE, PLSQL, JIRA, and SVN. Additionally, I am experienced in Hospital Information Management Systems (HBYS), particularly in modules such as Radiology, Pathology, Genetics, Sağlıknet, and other administrative modules.
+
+                        I also have experience in web service integrations, using REST and WSDL technologies to successfully complete numerous projects. Furthermore, I possess expertise in electronic signature (e-signature) technologies.
+
+                        As a professional, I aim to find creative and effective solutions to challenges in the software development process, successfully complete projects through teamwork, and continuously learn. Prioritizing customer satisfaction and software quality, I strive to participate in innovative projects and stay updated with the best practices in the industry.
+
+                        My career goals include utilizing my accumulated knowledge and experience in larger-scale projects and leading software development processes. My professional interests lie in exploring new technologies and integrating them into my projects to produce more efficient and effective solutions.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="col-12 lg:col-12 xl:col-12  mb-1 ">
+
+        <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout" class=" box shadow-4   border-round animation-duration-1000">
+
+            <p class="text-center text-4xl">
+                <br>
+                <a> Experience &  Education</a>
+
+            </p>
+            <div class="card">
+                <p-timeline [value]="events" align="alternate" styleClass="customized-timeline">
+                    <ng-template pTemplate="marker" let-event>
+            <span
+                class="flex w-2rem h-2rem align-items-center justify-content-center text-white border-circle z-1 shadow-1"
+                [style]="{ 'background-color': event.color }">
+                    <i [class]="event.icon"></i>
+            </span>
+                    </ng-template>
+                    <ng-template pTemplate="content" let-event>
+                        <p-card [header]="event.status" [subheader]="event.date">
+                            <img
+                                *ngIf="event.image"
+
+                                [alt]="event.name"
+                                width="200"
+                                class="shadow-2" />
+                            <p  *ngIf="!isReadMore">{{event.description| slice:0:200 }}...</p>
+                            <p *ngIf="isReadMore">{{event.description}}</p>
+                            <a href="javascript:void(0)" (click)="toggleReadMore()">
+                                {{ isReadMore ? 'Show Less' : 'Read More' }}
+                            </a>
+                            <br>
+                            <br>
+
+                            <a href="{{event.url}}" class="no-underline" target="_blank">
+                                for more information
+                            </a>
+
+                        </p-card>
+                    </ng-template>
+                </p-timeline>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-12 lg:col-12 xl:col-12  mb-1 ">
+
+        <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout" class=" box shadow-4   border-round animation-duration-1000 ">
+
+            <div class="grid">
+
+
+                <div   class="lg:col-12 xl:col-12 ml-6 mb-1 ">
+                    <p class="text-center text-4xl">
+
+                        <a >Skills</a>
+                    </p>
+                    <p class="text-center text-2xl">
+
+                        <a>Technical Skills</a>
+                    </p>
+                    <div class="flex align-items-center justify-content-center h-5rem gap-3">
+                    <div class="grid h-5rem gap-3">
+                        <p-chip label="Java" />
+                        <p-chip label="Angular" />
+                        <p-chip label="SQL" />
+                        <p-chip label="Html" />
+                        <p-chip label="CSS" />
+                        <p-chip label="Java Script" />
+                        <p-chip label="Spring Boot" />
+                    </div>
+                    </div>
+                </div>
+                <div   class="lg:col-12 xl:col-12  ml-6 mb-1 ">
+                    <p class="text-center text-2xl">
+
+                        <a>Tools and Technologie</a>
+                    </p>
+                    <div class="flex align-items-center justify-content-center h-5rem gap-3">
+                        <div class="grid h-5rem gap-3">
+                        <p-chip label="Postman" />
+                        <p-chip label="SoapUI" />
+                        <p-chip label="PLSql" />
+                        <p-chip label="Toad" />
+                        <p-chip label="Json" />
+                        <p-chip label="Wsdl" />
+                        <p-chip label="XML" />
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-12 lg:col-12 xl:col-12  mb-1 ">
+        <div pAnimateOnScroll enterClass="zoomin" leaveClass="fadeout" class=" box shadow-4   border-round animation-duration-1000 ">
+            <div class="flex flex-wrap align-items-center justify-content-center">
+
+
+                <div   class="lg:col-12 xl:col-12 ml-6 mb-1 ">
+                    <p class="text-center text-4xl">
+
+                        <a >Contact Me</a>
+                    </p>
+                </div>
+                <div class="grid">
+                    <div class="col-fixed ml-3" style="width:30%">
+                        <p class="text-center text-4xl">
+
+                            <a >Thank you for visit!</a>
+                        </p>
+                        <p>I am looking forward to your contact!</p>
+                    </div>
+
+
+                    <div class="col">
+                        <div class="p-fluid p-formgrid grid my-4 mx-4">
+                            <div class="field sm:col-12 md:col-12 lg:col-4 xl:col-4">
+                                <label htmlFor="firstname2">Firstname</label>
+                                <input pInputText id="firstname2" type="text" />
+                            </div>
+                            <div class="field sm:col-12 md:col-12 lg:col-4 xl:col-4">
+                                <label htmlFor="lastname2">Lastname</label>
+                                <input pInputText id="lastname2" type="text" />
+                            </div>
+                            <div class="field sm:col-12 md:col-12 lg:col-4 xl:col-4">
+                                <label htmlFor="address">E Maile</label>
+                                <input pInputTextarea id="maile"   />
+                            </div>
+                            <div class="field sm:col-12 md:col-12 lg:col-12 xl:col-12" style="hegiht:40%">
+                                <label  >Message</label>
+                                <textarea
+                                    rows="5"
+                                    cols="30"
+                                    pInputTextarea
+                                    [autoResize]="true"
+                                >
+                                    </textarea>
+
+                            </div>
+                            <div class="field col-12 md:col-12">
+                                <p-button label="Send" />
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
