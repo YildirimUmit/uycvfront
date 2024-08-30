@@ -1,4 +1,4 @@
-{
+{ "stack": "heroku-24",
     "name": "uycvfront",
     "buildpacks": [
         {
