@@ -1,0 +1,8 @@
+{
+    "name": "uycvfront",
+    "buildpacks": [
+        {
+            "url": "heroku/nodejs"
+        }
+    ]
+}
