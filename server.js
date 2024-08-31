@@ -9,3 +9,4 @@ app.get('/*', (req, res) => {
     res.sendFile( __dirname + "/dist/sakai-ng/index.html");
 });
 
+app.listen(process.env.PORT || 8081);
