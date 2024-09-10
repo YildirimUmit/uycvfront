@@ -11,8 +11,11 @@
         "watch": "ng build --watch --configuration development",
         "heroku-postbuild": "ng build  --configuration development",
         "test": "SET NODE_ENV=production ",
-        "serve": "npm start"
-
+        "serve": "npm start",
+        "engines": {
+            "node": "21.7.3",
+            "npm": "21.7.3"
+        }
     },
     "private": true,
     "dependencies": {
